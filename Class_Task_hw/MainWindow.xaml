@@ -27,6 +27,12 @@
         <CheckBox VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Количество вопросительных предложений</CheckBox>
         <CheckBox VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Количество восклецательных предложений</CheckBox>
 
+        <TextBlock HorizontalAlignment="Left" Name="Text1" Grid.Row="0" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Name="Text2" Grid.Row="1" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Name="Text3" Grid.Row="2" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Name="Text4" Grid.Row="3" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Name="Text5" Grid.Row="4" Grid.Column="1" />
+
         <GroupBox Height="75" Width="200" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Header="Вывод отчета">
             <StackPanel>
                 <RadioButton Margin="5" Name="SaveToFile">Сохранить в файл</RadioButton>
