@@ -1,0 +1,39 @@
+﻿<Window x:Class="Class_Task_hw.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Class_Task_hw"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="270" Width="406">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <CheckBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Количество предложений</CheckBox>
+        <CheckBox VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Количество символов</CheckBox>
+        <CheckBox VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Количество слов</CheckBox>
+        <CheckBox VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Количество вопросительных предложений</CheckBox>
+        <CheckBox VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Количество восклецательных предложений</CheckBox>
+
+        <GroupBox Height="75" Width="200" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Header="Вывод отчета">
+            <StackPanel>
+                <RadioButton Margin="5" Name="SaveToFile">Сохранить в файл</RadioButton>
+                <RadioButton IsChecked="True" Margin="5" Name="OutputOnScreen">Вывести на экран</RadioButton>
+            </StackPanel>
+        </GroupBox>
+
+        <Button Width="100" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">Отчет</Button>
+    </Grid>
+</Window>
