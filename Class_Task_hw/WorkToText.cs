@@ -23,11 +23,31 @@ namespace Class_Task_hw
         }
         public int NumberOfSentences()
         {
-            string[] separator = { ". ", "! ", "? " };
+            string[] separator = { ".", "!", "?" };
             string[] sentences = null;
 
             sentences = _text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
+            return sentences.Length;
+        }
+        public int NumbreOfSimbols()
+        {
+            return _text.Length;
+        }
+        public int NumbreOfWords()
+        {
+            char[] separator = { ' ', '.', '!', '?', '-', ',' };
+            string[] words = _text.Split( separator, StringSplitOptions.RemoveEmptyEntries);
+            return words.Length;
+        }
+        public int NumberOfInterrogativeSentences()
+        {
+            string[] sentences = _text.Split(new[] { '?' }, StringSplitOptions.RemoveEmptyEntries);
+            return sentences.Length;
+        }
+        public int NumberOfExclamationSentences()
+        {
+            string[] sentences = _text.Split(new[] { '!' }, StringSplitOptions.RemoveEmptyEntries);
             return sentences.Length;
         }
     }

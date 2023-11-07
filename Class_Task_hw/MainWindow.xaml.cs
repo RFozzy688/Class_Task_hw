@@ -23,6 +23,8 @@ namespace Class_Task_hw
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new AppVM(this);
         }
     }
 }
