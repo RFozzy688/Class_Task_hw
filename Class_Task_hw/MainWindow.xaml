@@ -21,11 +21,11 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <CheckBox Command="{Binding GetMethod}" CommandParameter="0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Количество предложений</CheckBox>
-        <CheckBox Command="{Binding GetMethod}" CommandParameter="1" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Количество символов</CheckBox>
-        <CheckBox Command="{Binding GetMethod}" CommandParameter="2" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Количество слов</CheckBox>
-        <CheckBox Command="{Binding GetMethod}" CommandParameter="3" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Количество вопросительных предложений</CheckBox>
-        <CheckBox Command="{Binding GetMethod}" CommandParameter="4" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Количество восклецательных предложений</CheckBox>
+        <CheckBox Name="Check1" Command="{Binding GetMethod}" CommandParameter="0" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Количество предложений</CheckBox>
+        <CheckBox Name="Check2" Command="{Binding GetMethod}" CommandParameter="1" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Количество символов</CheckBox>
+        <CheckBox Name="Check3" Command="{Binding GetMethod}" CommandParameter="2" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Количество слов</CheckBox>
+        <CheckBox Name="Check4" Command="{Binding GetMethod}" CommandParameter="3" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Количество вопросительных предложений</CheckBox>
+        <CheckBox Name="Check5" Command="{Binding GetMethod}" CommandParameter="4" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Количество восклецательных предложений</CheckBox>
 
         <TextBlock HorizontalAlignment="Left" Name="Text1" Grid.Row="0" Grid.Column="1" />
         <TextBlock HorizontalAlignment="Left" Name="Text2" Grid.Row="1" Grid.Column="1" />
@@ -40,6 +40,6 @@
             </StackPanel>
         </GroupBox>
 
-        <Button Command="{Binding GetAction}" Width="100" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">Отчет</Button>
+        <Button CommandParameter="2" Command="{Binding GetAction}" Width="100" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">Отчет</Button>
     </Grid>
 </Window>
