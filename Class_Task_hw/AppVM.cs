@@ -25,7 +25,8 @@ namespace Class_Task_hw
         List<TextBlock> _textBlocks;
         List<CheckBox> _checkBoxes;
         Commands _getMethod;
-        Commands _getAction;int c = 0;
+        Commands _getAction;
+        Commands _getToggle;
 
         public AppVM(MainWindow view)
         {
@@ -36,6 +37,8 @@ namespace Class_Task_hw
             _tasks = new List<TaskInfo>();
             _textBlocks = new List<TextBlock>();
             _checkBoxes = new List<CheckBox>();
+
+            _view.BtnReport.IsEnabled = false;
 
             _textBlocks.Add(_view.Text1);
             _textBlocks.Add(_view.Text2);
@@ -51,6 +54,7 @@ namespace Class_Task_hw
 
             _getMethod = new Commands(ChoiceMethod);
             _getAction = new Commands(ActionMethod);
+            _getToggle = new Commands(ToggleMethod);
 
             _methods.Add(_workToText.NumberOfSentences);
             _methods.Add(_workToText.NumbreOfSimbols);
@@ -60,6 +64,7 @@ namespace Class_Task_hw
         }
         public Commands GetMethod { get { return _getMethod; } }
         public Commands GetAction { get { return _getAction; } }
+        public Commands GetToggle { get { return _getToggle; } }
         private void ChoiceMethod(object param)
         {
             int index = Convert.ToInt32(param);
@@ -89,10 +94,49 @@ namespace Class_Task_hw
         }
         private void ActionMethod(object param)
         {
+            _view.BtnReport.IsEnabled = false;
+
+            List<string> report = new List<string>();
+
             foreach (var task in _tasks)
             {
                 task._task.Start();
-                //task._textBlocks.Text = task._task.Result.ToString();
+                
+                string str = $"{task._text}: {task._task.Result}";
+
+                report.Add(str);
+            }
+
+            using (FileStream fs = new FileStream("report.txt", FileMode.Create))
+            {
+                using (StreamWriter sw = new StreamWriter(fs))
+                {
+                    foreach (var str in report)
+                    {
+                        sw.WriteLine(str);
+                    }
+                }
+            }
+        }
+        private void ToggleMethod(object param)
+        {
+            int choice = Convert.ToInt32(param);
+
+            for (int i = 0; i < _checkBoxes.Count; i++)
+            {
+                _checkBoxes[i].IsChecked = false;
+                _textBlocks[i].Text = "";
+            }
+
+            switch (choice)
+            {
+                case 0:
+                    _tasks.Clear();
+                    _view.BtnReport.IsEnabled = true;
+                    break;
+                case 1:
+                    _view.BtnReport.IsEnabled = false;
+                    break;
             }
         }
     }

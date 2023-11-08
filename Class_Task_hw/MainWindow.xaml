@@ -25,7 +25,7 @@
         <CheckBox Name="Check2" Command="{Binding GetMethod}" CommandParameter="1" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Количество символов</CheckBox>
         <CheckBox Name="Check3" Command="{Binding GetMethod}" CommandParameter="2" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Количество слов</CheckBox>
         <CheckBox Name="Check4" Command="{Binding GetMethod}" CommandParameter="3" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Количество вопросительных предложений</CheckBox>
-        <CheckBox Name="Check5" Command="{Binding GetMethod}" CommandParameter="4" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Количество восклецательных предложений</CheckBox>
+        <CheckBox Name="Check5" Command="{Binding GetMethod}" CommandParameter="4" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Количество восклицательных предложений</CheckBox>
 
         <TextBlock HorizontalAlignment="Left" Name="Text1" Grid.Row="0" Grid.Column="1" />
         <TextBlock HorizontalAlignment="Left" Name="Text2" Grid.Row="1" Grid.Column="1" />
@@ -35,11 +35,11 @@
 
         <GroupBox Height="75" Width="200" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Header="Вывод отчета">
             <StackPanel>
-                <RadioButton Margin="5" Name="SaveToFile">Сохранить в файл</RadioButton>
-                <RadioButton IsChecked="True" Margin="5" Name="OutputOnScreen">Вывести на экран</RadioButton>
+                <RadioButton Command="{Binding GetToggle}" CommandParameter="0" Margin="5" Name="SaveToFile">Сохранить в файл</RadioButton>
+                <RadioButton Command="{Binding GetToggle}" CommandParameter="1" IsChecked="True" Margin="5" Name="OutputOnScreen">Вывести на экран</RadioButton>
             </StackPanel>
         </GroupBox>
 
-        <Button CommandParameter="2" Command="{Binding GetAction}" Width="100" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">Отчет</Button>
+        <Button CommandParameter="2" Command="{Binding GetAction}" Name="BtnReport" Width="100" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">Отчет</Button>
     </Grid>
 </Window>
